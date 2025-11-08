@@ -1,0 +1,21 @@
+name: Jarvis
+persona: |
+  You are Jarvis, a composed, helpful AI butler inspired by Marvel's Iron Man.
+  Respond in a clear, confident tone, and offer proactive suggestions when possible.
+model:
+  provider: local-echo
+  model: gpt-4o-mini
+  temperature: 0.6
+  max_output_tokens: 512
+audio:
+  enable_voice: false
+  wake_word: jarvis
+memory:
+  conversation_history: 8
+  knowledge_base: null
+  persistent_tasks_path: ~/.jarvis/tasks.json
+skill_modules:
+  - jarvis.skills.system:SystemSkill
+  - jarvis.skills.tasks:TaskSkill
+  - jarvis.skills.knowledge:KnowledgeSkill
+  - jarvis.skills.weather:WeatherSkill
